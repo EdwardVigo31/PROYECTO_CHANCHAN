@@ -1,0 +1,23 @@
+<div class="navbar">
+    <div class="navbar-container">
+        <a class="navbar-logo" href="#">CHAN CHAN</a>
+
+        <div id="navbar">
+            <button mat-button routerLink="">Inicio</button>
+            <button mat-button routerLink="lista/evento">Eventos</button>
+            <button mat-button routerLink="lista/noticia">Noticias</button>
+            <button mat-button routerLink="">Historia</button>
+            <button mat-button routerLink="">Contactanos</button>
+            <button mat-button routerLink="boleto">Boletos</button>
+            <button *ngIf="!isLoggedIn" [routerLink]="'/login'" mat-raised-button>Iniciar sesion</button>
+            <button *ngIf="!isLoggedIn" [routerLink]="'/signup'" mat-raised-button>Registrate</button>
+
+            <button *ngIf="isLoggedIn" (click)="logout()" style="margin-right: 50px" class="example-icon favorite-icon"
+                mat-raised-button >Cerrar Sesión</button>
+            <button *ngIf="isLoggedIn && user" mat-button style="margin-right: 10px" class="example-icon favorite-icon"
+                aria-label="Example icon-button with heart icon">
+                {{ user.username }}
+            </button>
+        </div>
+    </div>
+</div>
